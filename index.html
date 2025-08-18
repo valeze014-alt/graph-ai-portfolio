@@ -66,6 +66,11 @@
     .stat h3{margin:0; font-size:1.5rem}
     .stat p{margin:.2rem 0 0; color:var(--muted); font-size:.9rem}
 
+    /* AVATAR */
+    .avatar-wrap{display:flex; align-items:center; gap:.9rem; margin-bottom:1rem}
+    .avatar-ring{padding:3px; border-radius:999px; background:conic-gradient(from 140deg, var(--brand-a), var(--brand-b), var(--brand-c)); box-shadow:0 6px 18px rgba(124,92,255,.25)}
+    .avatar{display:block; width:clamp(76px,8vw,110px); height:clamp(76px,8vw,110px); border-radius:999px; object-fit:cover; border:2px solid rgba(255,255,255,.25)}
+
     /* SECTIONS */
     section{padding:3.5rem 0}
     .section-title{font-size:clamp(1.6rem,3vw,2rem); margin:0 0 .2rem; letter-spacing:.2px}
@@ -120,6 +125,7 @@
   <header class="hero">
     <div class="container grid">
       <div>
+        <div class="avatar-wrap"><span class="avatar-ring"><img class="avatar" src="https://raw.githubusercontent.com/valeze014-alt/graph-ai-portfolio/main/IMG_0756.jpg" alt="Portrait of Valentine Ezenwa" loading="lazy" decoding="async"></span></div>
         <div class="tag eyebrow"><span class="dot"></span> Generative AI for Work & Research</div>
         <h1 class="grad">Building AI‑powered workflows for logistics, analytics, and research</h1>
         <p class="lead">I’m <strong>Valentine U. Ezenwa</strong>, a Senior Program Manager in logistics and product operations. I apply no‑code and code‑assisted AI tools to accelerate analysis, automate routine tasks, and communicate insights—without exposing private data or relying on heavy frameworks.</p>
