@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Valentine Ezenwa — Generative AI for Work & Research</title>
+  <meta name="description" content="One‑page portfolio for the Generative AI for Work & Research course: about me, about the course, and weekly submissions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-1: #0f1226;
+      --bg-2: #11152e;
+      --card: rgba(255,255,255,0.08);
+      --card-strong: rgba(255,255,255,0.12);
+      --text: #e9eefb;
+      --muted: #b5c0e0;
+      --brand-a: #7c5cff;
+      --brand-b: #35d2ff;
+      --brand-c: #a5ffce;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --radius-xl: 20px;
+      --radius-2xl: 28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; color:var(--text);
+      font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(124,92,255,.35), transparent 55%),
+        radial-gradient(1000px 600px at 85% 15%, rgba(53,210,255,.28), transparent 60%),
+        radial-gradient(1000px 700px at 20% 90%, rgba(165,255,206,.18), transparent 60%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      background-attachment: fixed;
+    }
+    a{color:inherit}
+    .container{width:min(1120px, 92vw); margin-inline:auto}
+    .tag{display:inline-flex; gap:.5rem; align-items:center; padding:.35rem .7rem; border-radius:999px; background:linear-gradient(135deg, rgba(124,92,255,.2), rgba(53,210,255,.18)); border:1px solid rgba(255,255,255,.15); font-weight:600; letter-spacing:.2px}
+    .tag .dot{width:8px; height:8px; border-radius:999px; background:linear-gradient(135deg, var(--brand-a), var(--brand-b)); box-shadow:0 0 12px rgba(124,92,255,.7)}
+
+    /* NAV */
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(10px); background:rgba(6,10,30,.4); border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav .row{display:flex; align-items:center; justify-content:space-between; padding:.85rem 0}
+    .brand{display:flex; align-items:center; gap:.7rem; font-weight:800; letter-spacing:.3px}
+    .brand .logo{width:34px; height:34px; border-radius:10px; background:conic-gradient(from 140deg, var(--brand-a), var(--brand-b), var(--brand-c)); box-shadow:0 6px 18px rgba(124,92,255,.35)}
+    .nav a{opacity:.9; text-decoration:none}
+    .links{display:flex; gap:1rem}
+    .links a{padding:.6rem .9rem; border-radius:12px; transition:background .2s ease}
+    .links a:hover{background:rgba(255,255,255,.08)}
+
+    /* HERO */
+    .hero{position:relative; padding:6.5rem 0 4rem}
+    .hero .grid{display:grid; grid-template-columns: 1.05fr .95fr; gap:2.2rem; align-items:center}
+    .eyebrow{margin-bottom:1rem}
+    h1{font-size: clamp(2rem, 4vw, 3.25rem); line-height:1.08; margin:0 0 1rem; letter-spacing:.2px}
+    .grad{background:linear-gradient(90deg, #fff, #dfe7ff 30%, #c3f6ff 60%, #b7ffd8 85%); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .lead{font-size: clamp(1rem, 1.8vw, 1.15rem); color:var(--muted)}
+    .cta{display:flex; flex-wrap:wrap; gap:.8rem; margin-top:1.45rem}
+    .btn{display:inline-flex; align-items:center; gap:.6rem; padding:.85rem 1.1rem; font-weight:700; border-radius:14px; border:1px solid rgba(255,255,255,.14); background:linear-gradient(135deg, rgba(124,92,255,.25), rgba(53,210,255,.2)); box-shadow:var(--shadow); text-decoration:none}
+    .btn.ghost{background:rgba(255,255,255,.06)}
+    .hero .panel{background:var(--card); border:1px solid rgba(255,255,255,.12); border-radius:var(--radius-2xl); padding:1.2rem; box-shadow:var(--shadow)}
+    .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:.8rem; margin-top:1rem}
+    .stat{background:var(--card-strong); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:1rem}
+    .stat h3{margin:0; font-size:1.5rem}
+    .stat p{margin:.2rem 0 0; color:var(--muted); font-size:.9rem}
+
+    /* SECTIONS */
+    section{padding:3.5rem 0}
+    .section-title{font-size:clamp(1.6rem,3vw,2rem); margin:0 0 .2rem; letter-spacing:.2px}
+    .section-sub{color:var(--muted); margin:0 0 1.6rem}
+
+    .cards{display:grid; grid-template-columns:repeat(12, 1fr); gap:1rem}
+    .card{grid-column: span 6; background:var(--card); border:1px solid rgba(255,255,255,.12); border-radius:20px; padding:1.1rem 1.2rem; box-shadow:var(--shadow)}
+    .card.full{grid-column:1/-1}
+    .card.third{grid-column: span 4}
+    .card h3{margin:.1rem 0 .4rem; font-size:1.1rem}
+    .meta{color:var(--muted); font-size:.95rem}
+    .list{margin:.4rem 0 0; padding-left:1.1rem}
+
+    .pill{display:inline-block; padding:.35rem .7rem; border-radius:999px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); font-weight:600; font-size:.85rem}
+    .pill + .pill{margin-left:.4rem}
+
+    /* TIMELINE / WEEKS */
+    .weeks{display:grid; grid-template-columns:repeat(12,1fr); gap:1rem; counter-reset:week}
+    .week{grid-column: span 6; position:relative; padding:1.2rem 1.2rem 1.2rem 1.2rem; background:var(--card); border:1px solid rgba(255,255,255,.12); border-radius:18px}
+    .week::before{counter-increment:week; content:"Week " counter(week); position:absolute; top:-12px; left:14px; font-weight:800; font-size:.85rem; padding:.25rem .55rem; border-radius:999px; background:linear-gradient(135deg, rgba(124,92,255,.5), rgba(53,210,255,.45)); border:1px solid rgba(255,255,255,.22)}
+    .week h4{margin:.35rem 0 .25rem; font-size:1.05rem}
+    .week .placeholder{display:inline-flex; align-items:center; gap:.35rem; margin-top:.4rem; padding:.4rem .6rem; border-radius:10px; text-decoration:none; font-weight:700; border:1px dashed rgba(255,255,255,.22); background:rgba(255,255,255,.04)}
+
+    /* FOOTER */
+    footer{padding:2.5rem 0 3rem; color:var(--muted)}
+
+    /* REVEAL ANIMATIONS */
+    .reveal{opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease}
+    .reveal.in-view{opacity:1; transform:none}
+
+    @media (max-width: 900px){
+      .hero{padding:5.2rem 0 2.8rem}
+      .hero .grid{grid-template-columns:1fr}
+      .cards .card, .card.third, .week{grid-column:1/-1}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container row">
+      <div class="brand"><span class="logo"></span> <span>Valentine Ezenwa</span></div>
+      <div class="links">
+        <a href="#about">About me</a>
+        <a href="#course">About the course</a>
+        <a href="#submissions">Weekly submissions</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container grid">
+      <div>
+        <div class="tag eyebrow"><span class="dot"></span> Generative AI for Work & Research</div>
+        <h1 class="grad">Building AI‑powered workflows for logistics, analytics, and research</h1>
+        <p class="lead">I’m <strong>Valentine U. Ezenwa</strong>, a Senior Program Manager in logistics and product operations. I apply no‑code and code‑assisted AI tools to accelerate analysis, automate routine tasks, and communicate insights—without exposing private data or relying on heavy frameworks.</p>
+        <div class="cta">
+          <a class="btn" href="#about">About me</a>
+          <a class="btn ghost" href="#course">Explore the course</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><h3>8 weeks</h3><p>Live cohort journey</p></div>
+          <div class="stat"><h3>No‑code + Code</h3><p>Practical tool stack</p></div>
+          <div class="stat"><h3>Capstone</h3><p>Portfolio‑ready project</p></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="meta">Focus areas</div>
+        <div style="margin-top:.6rem; display:flex; flex-wrap:wrap; gap:.5rem">
+          <span class="pill">AI‑assisted analysis</span>
+          <span class="pill">Research automation</span>
+          <span class="pill">LLM apps & RAG</span>
+          <span class="pill">Dashboards & docs</span>
+          <span class="pill">Process optimization</span>
+          <span class="pill">No‑code ops</span>
+        </div>
+        <div style="height:10px"></div>
+        <div class="meta">Tech & tools</div>
+        <div style="margin-top:.6rem; display:flex; flex-wrap:wrap; gap:.5rem">
+          <span class="pill">SQL</span>
+          <span class="pill">Python</span>
+          <span class="pill">Java</span>
+          <span class="pill">HTML/CSS</span>
+          <span class="pill">Spreadsheets</span>
+          <span class="pill">Automation agents</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT ME -->
+  <section id="about">
+    <div class="container reveal">
+      <h2 class="section-title">About me</h2>
+      <p class="section-sub">Logistics SME and product‑minded program manager with experience at Amazon Logistics and FedEx. I bridge operations, analytics, and software to ship improvements that reduce cost, improve data quality, and scale standard work.</p>
+
+      <div class="cards">
+        <article class="card full">
+          <h3>Profile</h3>
+          <p class="meta">Senior Program Manager — Sort Planning / Last‑Mile Operations</p>
+          <ul class="list">
+            <li>Lead testing, pilots, and rollout of alternative delivery modes (store partners, e‑bikes, walkers) across multiple regions.</li>
+            <li>Product owner for sort/route planning tools; define requirements, triage issues, and steward best practices.</li>
+            <li>Drove integration of hub‑store delivery into standard workflows across 8 countries; projected 499M shipments and $173M entitlement (2024).</li>
+            <li>Advanced ETA prediction adoption to cut manifested‑not‑received and unplanned volume by ~25% in EU/MENA.</li>
+            <li>Hands‑on analytics with SQL for KPI tracking, compliance, and continuous improvement.</li>
+          </ul>
+        </article>
+
+        <article class="card third">
+          <h3>Experience</h3>
+          <ul class="list">
+            <li><strong>Amazon Logistics</strong> — Senior Program Manager (2022–Present)</li>
+            <li><strong>FedEx Services</strong> — Senior Business App Analyst; earlier Analyst (2018–2021)</li>
+            <li><strong>Johns Hopkins Hospital</strong> — Tech Consultant (2017)</li>
+            <li><strong>IBM</strong> — IT Consulting Intern (2015)</li>
+          </ul>
+        </article>
+
+        <article class="card third">
+          <h3>Education</h3>
+          <ul class="list">
+            <li>M.S.E. Engineering Management — <strong>Johns Hopkins University</strong></li>
+            <li>B.S. Electrical & Computer Engineering — <strong>University of Rochester</strong></li>
+          </ul>
+          <div style="height:.4rem"></div>
+          <h3>Certifications</h3>
+          <p class="meta">SAFe® POPM & Practitioner</p>
+        </article>
+
+        <article class="card third">
+          <h3>Skills & tools</h3>
+          <p class="meta">SQL, Python, Java, HTML/CSS, Excel, PowerPoint, Visio, Asana, QuickSight</p>
+          <div style="height:.4rem"></div>
+          <h3>Interests</h3>
+          <p class="meta">Soccer, Pickleball, Web design, Mixology, Rock‑climbing, Trivia</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT THE COURSE -->
+  <section id="course">
+    <div class="container reveal">
+      <h2 class="section-title">About the course</h2>
+      <p class="section-sub">An intensive 8‑week, live cohort on applying Generative AI to real research and work—hands‑on and tool‑first. Includes weekly workshops, help sessions, private community, capstone coaching, feedback on assessments, a shareable certificate, and lifetime access to tutorials.</p>
+
+      <div class="cards" style="margin-top:1.2rem">
+        <article class="card full">
+          <h3>What I’m learning</h3>
+          <div class="cards" style="margin-top:.6rem">
+            <div class="card third">
+              <h3>Module 1 — Websites, Documents & Presentations</h3>
+              <p class="meta">LLM fundamentals; generating Markdown/LaTeX/HTML; creating simple research sites; structured documents; AI‑assisted presentations.</p>
+            </div>
+            <div class="card third">
+              <h3>Module 2 — AI‑Automated Data Analysis</h3>
+              <p class="meta">Code Interpreter, Julius & TheBricks; file transforms; dashboards; automated reports; spreadsheet automations.</p>
+            </div>
+            <div class="card third">
+              <h3>Module 3 — GenAI for Research & Text Analysis</h3>
+              <p class="meta">Literature review tools (Elicit, LiteRev); text classification; sentiment; knowledge maps; summarization pipelines; information synthesis.</p>
+            </div>
+            <div class="card third">
+              <h3>Module 4 — Custom GPTs & Chatbots</h3>
+              <p class="meta">Chat architecture, context windows, RAG; custom GPTs; Botpress chatbots; connecting knowledge bases.</p>
+            </div>
+            <div class="card third">
+              <h3>Module 5 — AI for Task Automation</h3>
+              <p class="meta">Email responses, browser agents, multi‑step flows, agent‑based systems for repetitive research tasks.</p>
+            </div>
+            <div class="card third">
+              <h3>Module 6 — Communication & Outreach</h3>
+              <p class="meta">AI‑generated summaries, figures, video abstracts; visualization prompts; content scheduling.</p>
+            </div>
+            <div class="card third">
+              <h3>Module 7 — Capstone & Showcase</h3>
+              <p class="meta">Project progress checks, peer feedback, final presentation and Q&A.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card third">
+          <h3>Bootcamp features</h3>
+          <ul class="list">
+            <li>Weekly live workshops + help sessions</li>
+            <li>Private community & personalized feedback</li>
+            <li>Capstone coaching & showcase</li>
+            <li>Shareable certificate</li>
+            <li>Lifetime tutorial library access</li>
+          </ul>
+        </article>
+
+        <article class="card third">
+          <h3>Assessment</h3>
+          <ul class="list">
+            <li>Online quizzes — 15%</li>
+            <li>Workshop assignments — 35%</li>
+            <li>Attendance & participation — 10% (attend ≥5 workshops)</li>
+            <li>Final project — 40%</li>
+            <li>Passing grade: 80%</li>
+          </ul>
+        </article>
+
+        <article class="card third">
+          <h3>Provider</h3>
+          <p class="meta">GRAPH Courses — University of Geneva‑based nonprofit offering rigorous, practical AI education with a supportive global community.</p>
+          <a class="placeholder" href="https://thegraphcourses.org" target="_blank" rel="noopener">Course website →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEEKLY SUBMISSIONS -->
+  <section id="submissions">
+    <div class="container reveal">
+      <h2 class="section-title">My weekly submissions</h2>
+      <p class="section-sub">Placeholders for now—links will be added as each deliverable is published.</p>
+      <div class="weeks">
+        <article class="week">
+          <h4>Site & Docs with LLMs</h4>
+          <p class="meta">Markdown/LaTeX/HTML outputs; research site scaffold.</p>
+          <a class="placeholder" href="#">Coming soon</a>
+        </article>
+        <article class="week">
+          <h4>AI‑Automated Analysis</h4>
+          <p class="meta">Notebook or dashboard generated with Code Interpreter/Julius.</p>
+          <a class="placeholder" href="#">Coming soon</a>
+        </article>
+        <article class="week">
+          <h4>Literature & Text Pipelines</h4>
+          <p class="meta">Elicit/LiteRev review; classifier or summarizer prototype.</p>
+          <a class="placeholder" href="#">Coming soon</a>
+        </article>
+        <article class="week">
+          <h4>Custom GPT / RAG Assistant</h4>
+          <p class="meta">Small domain assistant; context window & retrieval design.</p>
+          <a class="placeholder" href="#">Coming soon</a>
+        </article>
+        <article class="week">
+          <h4>Task Automation Flow</h4>
+          <p class="meta">Agent‑based email/browser automation demo.</p>
+          <a class="placeholder" href="#">Coming soon</a>
+        </article>
+        <article class="week">
+          <h4>Communication Assets</h4>
+          <p class="meta">Figures/poster or video abstract; prompt pack.</p>
+          <a class="placeholder" href="#">Coming soon</a>
+        </article>
+        <article class="week">
+          <h4>Capstone Draft</h4>
+          <p class="meta">Progress check with peers/instructors.</p>
+          <a class="placeholder" href="#">Coming soon</a>
+        </article>
+        <article class="week">
+          <h4>Final Presentation</h4>
+          <p class="meta">Showcase & Q&A.</p>
+          <a class="placeholder" href="#">Coming soon</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="tag"><span class="dot"></span> Built without frameworks</div>
+      <p style="margin:.8rem 0 0">Last updated: <time id="updated"></time>. This page intentionally omits email to reduce spam exposure.</p>
+    </div>
+  </footer>
+
+  <script>
+    // IntersectionObserver for reveal animations
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view')}})
+    }, {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Updated timestamp
+    const d = new Date();
+    const fmt = new Intl.DateTimeFormat(undefined, {year:'numeric', month:'short', day:'2-digit'});
+    document.getElementById('updated').textContent = fmt.format(d);
+  </script>
+</body>
+</html>
