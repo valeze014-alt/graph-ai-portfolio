@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Valentine Ezenwa — Generative AI for Work & Research</title>
-  <meta name="description" content="One‑page portfolio for the Generative AI for Work & Research course: about me, about the course, and weekly submissions." />
+  <meta name="description" content="One‑page portfolio for the Generative AI for Work & Research course: about me, about the course, weekly submissions, and consultation contact form." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -94,6 +94,11 @@
     .week h4{margin:.35rem 0 .25rem; font-size:1.05rem}
     .week .placeholder{display:inline-flex; align-items:center; gap:.35rem; margin-top:.4rem; padding:.4rem .6rem; border-radius:10px; text-decoration:none; font-weight:700; border:1px dashed rgba(255,255,255,.22); background:rgba(255,255,255,.04)}
 
+    /* CONTACT FORM */
+    #contact .form-card{background:var(--card); border:1px solid rgba(255,255,255,.12); border-radius:20px; padding:0; overflow:hidden; box-shadow:var(--shadow)}
+    #contact .iframe-wrap{position:relative}
+    #contact iframe{display:block; width:100%; height:780px; border:0}
+
     /* FOOTER */
     footer{padding:2.5rem 0 3rem; color:var(--muted)}
 
@@ -105,6 +110,7 @@
       .hero{padding:5.2rem 0 2.8rem}
       .hero .grid{grid-template-columns:1fr}
       .cards .card, .card.third, .week{grid-column:1/-1}
+      #contact iframe{height:900px} /* more vertical space on mobile */
     }
   </style>
 </head>
@@ -117,6 +123,7 @@
         <a href="#about">About me</a>
         <a href="#course">About the course</a>
         <a href="#submissions">Weekly submissions</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
@@ -336,6 +343,20 @@
     </div>
   </section>
 
+  <!-- CONTACT FOR CONSULTATION -->
+  <section id="contact">
+    <div class="container reveal">
+      <h2 class="section-title">Contact for Consultation</h2>
+      <p class="section-sub">Interested in an AI‑powered analytics, logistics, or research workflow? Use the form below to request a consultation.</p>
+      <article class="form-card">
+        <div class="iframe-wrap">
+          <!-- Embedded Google Form (as provided) -->
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfCldJNDgE7qumUCfz8lEfizqG7rpaRgx_JCAGeqJSP7cERtg/viewform?embedded=true" width="640" height="780" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <footer>
     <div class="container">
       <div class="tag"><span class="dot"></span> Built without frameworks</div>
@@ -356,6 +377,6 @@
     document.getElementById('updated').textContent = fmt.format(d);
   </script>
   <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
-<script src="https://files.bpcontent.cloud/2025/09/07/17/20250907172454-2SQ4M2JV.js" defer></script>
+  <script src="https://files.bpcontent.cloud/2025/09/07/17/20250907172454-2SQ4M2JV.js" defer></script>
 </body>
 </html>
